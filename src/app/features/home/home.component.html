@@ -1,0 +1,45 @@
+<eui-page>
+  <eui-page-content>
+    <button (click)="refreshOptions()">reset options</button>
+    <button (click)="setInvalidOptions()">invalid options</button>
+    <button (click)="patch()">set controls to id1</button>
+
+    <form [formGroup]="formGroup">
+      <eui-card>
+        <eui-card-header>
+          <eui-card-header-title> Autocomplete old </eui-card-header-title>
+          <eui-card-header-subtitle>
+            <eui-label> Parent control value: {{ formControl1.value }} </eui-label>
+          </eui-card-header-subtitle>
+        </eui-card-header>
+        <eui-card-content>
+          <app-autocomplete-selection
+            formControlName="travel1"
+            [options$]="travels$"
+            valueField="id"
+            displayField="name"
+            [placeholder]="'select'"
+            ></app-autocomplete-selection>
+        </eui-card-content>
+    </eui-card>
+
+    <eui-card>
+        <eui-card-header>
+          <eui-card-header-title>Autocomplete new</eui-card-header-title>
+          <eui-card-header-subtitle>
+            <eui-label> Parent control value: {{ formControl2.value }} </eui-label>
+          </eui-card-header-subtitle>
+        </eui-card-header>
+        <eui-card-content>
+            <app-autocomplete-selection-new
+            formControlName="travel2"
+            [options$]="travels$"
+            valueField="id"
+            displayField="name"
+            [placeholder]="'select'"
+          ></app-autocomplete-selection-new>
+        </eui-card-content>
+      </eui-card>
+    </form>
+  </eui-page-content>
+</eui-page>

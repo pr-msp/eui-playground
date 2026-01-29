@@ -1,0 +1,38 @@
+{
+    "name": "eui-angular-app",
+    "version": "21.0.3",
+    "license": "EUPL-1.1",
+    "scripts": {
+        "ng": "ng",
+        "start-mock-server": "nodemon --watch ./mock ./mock/server.js",
+        "start-serve": "eui-cli serve-app --configuration=proxy-mock",
+        "start": "npm-run-all --parallel start-mock-server start-serve",
+        "start-proxy": "eui-cli serve-app --configuration=proxy",
+        "start-local": "eui-cli serve-app",
+        "build": "eui-cli build-app",
+        "build-dev": "eui-cli build-app --configuration=development --configEnvTarget=dev",
+        "build-prod": "eui-cli build-app --configuration=production-optimized --configEnvTarget=prod",
+        "build-prod-skip-test": "eui-cli build-app --configuration=production-optimized --configEnvTarget=prod --skipTest",
+        "build-prod-stats": "eui-cli build-app --configuration=production-optimized --configEnvTarget=prod",
+        "app:build": "eui-cli build-app",
+        "app:inject-config": "eui-cli inject-config-app",
+        "generate-sprite": "eui-cli generate-sprite"
+    },
+    "private": true,
+    "dependencies": {
+        "@eui/deps-base": "21.0.3"
+    },
+    "devDependencies": {
+        "npm-run-all": "4.1.5",
+        "json-server": "1.0.0-beta.3",
+        "nodemon": "3.1.11",
+        "lowdb": "1.0.0",
+        "body-parser": "1.20.3",
+        "express": "4.21.2"
+    },
+    "resolutions": {
+        "semver": ">=7.5.2",
+        "dompurify": ">=3.2.4",
+        "tmp": ">0.2.4"
+    }
+}
