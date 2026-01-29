@@ -46,10 +46,10 @@ export class HomeComponent implements OnInit {
     this.formGroup.setValue({travel1: 'id1', travel2: 'id1'})
   }
 
-  refreshOptions() {
+  setOptions_1_2() {
     this.travels$.next([new Travel('id1', 'name1'), new Travel('id2', 'name2')]);
   }
-  setInvalidOptions() {
+  setOptions_3() {
     this.travels$.next([new Travel('invalidId', 'invalidName')]);
   }
 }
